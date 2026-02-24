@@ -1,0 +1,47 @@
+{
+  "name": "backend",
+  "projectType": "application",
+  "root": "apps/backend",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run python src/manage.py runserver 0.0.0.0:8000" }
+    },
+    "migrate": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run python src/manage.py migrate" }
+    },
+    "makemigrations": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run python src/manage.py makemigrations" }
+    },
+    "shell": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run python src/manage.py shell" }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run pytest -q" }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run ruff check ." }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run black . && poetry run isort ." }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run pyright" }
+    },
+    "celery-worker": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run celery -A config worker -l info" }
+    },
+    "celery-beat": {
+      "executor": "nx:run-commands",
+      "options": { "cwd": "apps/backend", "command": "poetry run celery -A config beat -l info" }
+    }
+  }
+}
