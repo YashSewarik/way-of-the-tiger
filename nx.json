@@ -11,5 +11,63 @@
     "sharedGlobals": [
       "{workspaceRoot}/.github/workflows/ci.yml"
     ]
+  },
+  "targetDefaults": {
+    "serve": {
+      "options": {
+        "env": {
+          "PYTHONPATH": "src",
+          "DJANGO_SETTINGS_MODULE": "config.settings.local"
+        }
+      }
+    },
+    "migrate": {
+      "options": {
+        "env": {
+          "PYTHONPATH": "src",
+          "DJANGO_SETTINGS_MODULE": "config.settings.local"
+        }
+      }
+    },
+    "makemigrations": {
+      "options": {
+        "env": {
+          "PYTHONPATH": "src",
+          "DJANGO_SETTINGS_MODULE": "config.settings.local"
+        }
+      }
+    },
+    "shell": {
+      "options": {
+        "env": {
+          "PYTHONPATH": "src",
+          "DJANGO_SETTINGS_MODULE": "config.settings.local"
+        }
+      }
+    },
+    "test": {
+      "options": {
+        "env": {
+          "PYTHONPATH": "src",
+          "DJANGO_SETTINGS_MODULE": "config.settings.test"
+        }
+      }
+    },
+    "celery-worker": {
+      "options": {
+        "env": {
+          "PYTHONPATH": "src",
+          "DJANGO_SETTINGS_MODULE": "config.settings.local"
+        }
+      }
+    },
+    "celery-beat": {
+      "options": {
+        "env": {
+          "PYTHONPATH": "src",
+          "DJANGO_SETTINGS_MODULE": "config.settings.local"
+        }
+      }
+    }
   }
 }
