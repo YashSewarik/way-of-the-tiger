@@ -68,3 +68,10 @@ venv = ".venv"
 DJANGO_SETTINGS_MODULE = "config.settings.test"
 python_files = ["test_*.py", "*_test.py"]
 addopts = "-q"
+
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = []
+package-mode = false
