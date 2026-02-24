@@ -37,7 +37,7 @@ jobs:
       # Install backend deps (creates .venv inside apps/backend if you configured it that way)
       - name: Install backend deps
         working-directory: apps/backend
-        run: poetry install --no-interaction --no-ansi
+        run: poetry install --no-interaction --no-ansi --no-root
 
       - name: Run Nx targets
         run: pnpm exec nx run-many -t lint test build
