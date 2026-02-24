@@ -63,14 +63,14 @@
             "executor": "nx:run-commands",
             "options": {
                 "cwd": "apps/backend",
-                "command": "PYTHONPATH=src poetry run celery -A config.celery:app worker -l info"
+                "command": "poetry run celery -A config.celery:app worker -l info"
             }
         },
         "celery-beat": {
             "executor": "nx:run-commands",
             "options": {
                 "cwd": "apps/backend",
-                "command": "PYTHONPATH=src poetry run celery -A config.celery:app beat -l info"
+                "command": "poetry run celery -A config.celery:app beat -l info"
             }
         }
     }
